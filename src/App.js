@@ -1,25 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component }  from 'react'
+import  fruta from './abacate.png'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class dadosPessoais extends Component {
+  state = {
+    name:`Igor Bastos`,
+    idade :17,
+    comida :`Churrasco`,
+    musica: [`Racionais mc's - Vida Loka`,`Djonga - Bença`,`Legião Urbana - Tempo Perdido`]
+  }
+  render(){
+    return(
+      <div>
+        <h1>{this.state.name}</h1>
+        <h2>{this.state.idade}</h2>
+        <h3>{this.state.comida}</h3>
+        <h3>Comidas Favoritas</h3>
+        <ul>
+          <li>{this.state.musica[0]}</li>
+          <li>{this.state.musica[1]}</li>
+          <li>{this.state.musica[2]}</li>
+        </ul>
+        <img src={fruta}/>
+      </div>
+    );
+  }
 }
 
-export default App;
+export default dadosPessoais;
